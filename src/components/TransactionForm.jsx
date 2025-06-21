@@ -65,7 +65,7 @@ const TransactionForm = ({ addTransaction }) => {
                             id="amount"
                             type="number"
                             step="0.1"
-                            min="0"
+                            min="0.1"
                             required
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}

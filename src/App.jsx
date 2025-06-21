@@ -48,7 +48,7 @@ const editTransaction = (id, updatedTransaction) => {
         />
         }
         />
-        <Route path="/dashboard" element={<Dashboard transaction={transactions}/>}/>
+        <Route path="/dashboard" element={<Dashboard transactions={transactions}/>}/>
       </Routes>
     </Router>
 
