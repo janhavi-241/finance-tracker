@@ -120,9 +120,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
 }
 
 /*********** Containers ***********/
@@ -166,31 +163,26 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0 0 10px 0;
-  color: #c9d1d9;
 }
 
 .sub-heading-large {
   font-size: 2rem;
   font-weight: bold;
-  color: #c9d1d9
 }
 
 .sub-heading-medium {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #c9d1d9
 }
 
 .sub-heading-small {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #c9d1d9
   /* color: #666; */
 }
 
 .sub-text {
   font-size: 1.125rem;
-  color: #8b949e
   /* margin-bottom: 10px; */
   /* color: #666; */
 }
@@ -198,13 +190,11 @@ body {
 .sub-text-small {
   font-size: 14px;
   font-weight: 600;
-  color: #8b949e
 }
 
 label {
   font-size: 1rem;
   font-weight: 600;
-  color: #c9d1d9
 }
 
 /*********** Navbar ***********/
@@ -215,69 +205,42 @@ label {
   gap: 1.5rem;
   padding: 0.6rem 2.4rem;
   font-size: 1.2rem;
-  border: 1px solid #30363d;
+  border: 1px solid #ccc;
   border-radius: 30px;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  background-color: #161b22;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-width: fit-content;
   margin: 20px auto;
 }
 
 .navbar-item {
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid white;
 }
 
-/* .navbar-item:hover {
-  color: #58a6ff;
-  border-bottom: 2px solid #238636;
-} */
-
-.navbar-item a {
-  color: #c9d1d9;
-  text-decoration: none;
-  padding: 6px 12px;
-  display: block;
-  transition: color 0.3s, border-bottom 0.3s;
+.navbar-item:hover {
+  border-bottom: 1px solid #ffae00;
 }
-
-.navbar-item a:hover {
-  color: #58a6ff; /* light blue */
-  border-bottom: 2px solid #58a6ff;
-}
-
-.navbar-item.active a {
-  color: #58a6ff;
-  border-bottom: 2px solid #58a6ff;
-}
-
 
 /*********** Card ***********/
 .card {
-  border: 1px solid #30363d;
-  background-color: #161b22;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20;
   /* background-image: linear-gradient(to bottom right, #f0f0f0, #ffffff); */
 }
 
 .recent-transactions-card {
-  border: 1px solid #30363d;
   padding: 1rem;
-  border-radius: 8px;
-  background-color: #161b22;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  background-color: #efefef;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Inputs */
-input,select {
+select {
   height: 2.25rem;
   width: 100%;
-  border-radius: 6px;
-  border: 1px solid #30363d;
+  border-radius: 0.375rem;
   padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-  background-color: #0d1117;
-  color: #c9d1d9;
   font-size: 0.875rem;
   line-height: 1.25rem;
   box-shadow: 0 0 0 0px #fff, 0 0 0 calc(1px + 0px) rgba(40, 50, 66, 0.5),
@@ -293,91 +256,3 @@ input,select {
 .trash-button:hover {
   color: rgb(197, 0, 0);
 }
-
-/* Home Page */
-.main-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.edit-form-container {
-  background-color: #46484a;
-  width:500px;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  margin-top: 10px;
-}
-
-.edit-form-container input {
-  background-color:rgb(5, 20, 16);
-  display: block;
-  width: 100%;
-  padding: 8px;
-  margin: 6px 0 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.edit-form-container label {
-  font-weight: 500;
-  margin-top: 10px;
-  display: block;
-  color: #bbc4d1;
-}
-
-.edit-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.save-button {
-  background-color: #28a745;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.cancel-button {
-  background-color: #dc3545;
-  color: white;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Transaction List Card */
-.recent-transactions-card {
-  background-color: #393131;
-  border: 1px solid #e2e2e2;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Flex layout for buttons */
-.flex-container {
-  display: flex;
-  gap: 10px;
-}
-
-/* Edit form container */
-.edit-form-container {
-  background-color: #f1f5f9;
-  padding: 16px;
-  border-radius: 8px;
-}
-
-.edit-form-container input {
-  width: 100%;
-  margin-bottom: 10px;
-}
-

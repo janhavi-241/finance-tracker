@@ -1,8 +1,12 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Clock, PieChart, TrendingDown, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTransactions } from "../context/TransactionContext";
 
-function Dashboard({ transactions =[] }) {
+function Dashboard({}) {
+
+  const { transactions } = useTransactions();
+
   const [stats, setStats] = useState({
     total: 0,
     income: 0,
@@ -34,11 +38,11 @@ function Dashboard({ transactions =[] }) {
 
       const income = transactions
         .filter((t) => t.type === "income")
-        .reduce((sum, t) => sum + Number(t.amount), 0);
+        .reduce((sum, t) => sum + (parseFloat(t.amount)|| 0),0);
 
       const expenses = transactions
         .filter((t) => t.type === "expense")
-        .reduce((sum, t) => sum + Number(t.amount), 0);
+        .reduce((sum, t) => sum + (parseFloat(t.amount)|| 0),0);
 
       const balance = income - expenses;
 
@@ -71,7 +75,7 @@ function Dashboard({ transactions =[] }) {
         income:
           (thisMonthTransactions
             .filter((t) => t.type === "income")
-            .reduce((sum, t) => sum + Number(t.amount), 0) /
+            .reduce((sum, t) => sum + (parseFloat(t.amount)|| 0),0) /
             (lastMonthTransactions
               .filter((t) => t.type === "income")
               .reduce((sum, t) => sum + Number(t.amount), 0) || 1) -
@@ -80,7 +84,7 @@ function Dashboard({ transactions =[] }) {
         expenses:
           (thisMonthTransactions
             .filter((t) => t.type === "expense")
-            .reduce((sum, t) => sum + Number(t.amount), 0) /
+            .reduce((sum, t) => sum + (parseFloat(t.amount)|| 0),0) /
             (lastMonthTransactions
               .filter((t) => t.type === "expense")
               .reduce((sum, t) => sum + Number(t.amount), 0) || 1) -
@@ -239,7 +243,7 @@ function Dashboard({ transactions =[] }) {
                       </p>
                     </div>
                     <div
-                      className={`sub-text style={{fontWeight: 600}} ₹{
+                      className={`sub-text style={{fontWeight: 600}} ${
                         transaction.type === "expense"
                           ? "text-red-500"
                           : "text-green-500"
