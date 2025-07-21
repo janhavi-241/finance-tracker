@@ -8,7 +8,7 @@ export const TransactionProvider = ({ children }) => {
 
   // GET: Fetch all transactions
   useEffect(() => {
-    fetch("http://localhost:5000/transactions")
+    fetch("https://finance-tracker-uvpb.onrender.com/transactions")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched transactions:", data);
@@ -24,7 +24,7 @@ export const TransactionProvider = ({ children }) => {
   // POST: Add a new transaction
   const addTransaction = async (tx) => {
     try {
-      const res = await fetch("http://localhost:5000/transactions", {
+      const res = await fetch("https://finance-tracker-uvpb.onrender.com/transactions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(tx),
@@ -40,7 +40,7 @@ export const TransactionProvider = ({ children }) => {
   // DELETE: Delete transaction by _id
   const deleteTransaction = async (_id) => {
     try {
-      await fetch(`http://localhost:5000/transactions/${_id}`, {
+      await fetch(`https://finance-tracker-uvpb.onrender.com/transactions/${_id}`, {
         method: "DELETE",
       });
 
@@ -53,7 +53,7 @@ export const TransactionProvider = ({ children }) => {
   const editTransaction = async (_id, tx) => {
     try {
       const updatedTx = await fetch(
-        `http://localhost:5000/transactions/${_id}`,
+        `https://finance-tracker-uvpb.onrender.com/transactions/${_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
